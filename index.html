@@ -1,0 +1,194 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모바일 청첩장</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="invitation">
+      <section class="cover section">
+        <div class="cover-text">
+          <p class="cover-kicker">THE MARRIAGE</p>
+          <p class="cover-date">2026/04/25</p>
+        </div>
+        <div class="cover-photo-wrap">
+          <img
+            class="cover-image"
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
+            alt="신랑 신부 메인 사진"
+          />
+          <p class="cover-side-name">오세욱 &amp; 김상화</p>
+        </div>
+        <p class="cover-info"><strong>일시</strong> 2026년 4월 25일 (토) 오전 11시</p>
+        <p class="cover-info"><strong>장소</strong> 우리은행 본점 4층 비전홀</p>
+      </section>
+
+      <section class="greeting section">
+        <div class="mini-polaroid">
+          <img src="https://picsum.photos/seed/polaroid1/320/420" alt="세욱 상화 스냅 사진" />
+        </div>
+        <p>
+          세욱, 상화 결혼합니다.<br /><br />
+          삶의 사소한 것들마저도<br />
+          평생 함께하고 싶은 사람을 만났습니다.<br /><br />
+          맞잡은 손이 늘 따뜻했던 우리<br />
+          애틋하고 소중한 이 마음 그대로<br />
+          하나라는 이름 안에서 오롯이 살아가겠습니다.<br /><br />
+          사랑으로 첫걸음을 내딛는 날 함께해 주세요.
+        </p>
+        <p class="greeting-family">
+          오두섭 · 이미연 의 장남 세욱<br />
+          김광호 · 김인옥 의 장녀 상화
+        </p>
+      </section>
+
+      <section class="calendar section">
+        <h2>our day</h2>
+        <div class="calendar-wrap" role="img" aria-label="2026년 4월 달력, 25일 예식일">
+          <p class="calendar-month">4월</p>
+          <div class="calendar-weekdays">
+            <span>SUN</span>
+            <span>MON</span>
+            <span>TUE</span>
+            <span>WED</span>
+            <span>THU</span>
+            <span>FRI</span>
+            <span>SAT</span>
+          </div>
+          <div class="calendar-dates">
+            <span class="day is-empty" aria-hidden="true"></span>
+            <span class="day is-empty" aria-hidden="true"></span>
+            <span class="day is-empty" aria-hidden="true"></span>
+            <span class="day">1</span>
+            <span class="day">2</span>
+            <span class="day">3</span>
+            <span class="day">4</span>
+            <span class="day">5</span>
+            <span class="day">6</span>
+            <span class="day">7</span>
+            <span class="day">8</span>
+            <span class="day">9</span>
+            <span class="day">10</span>
+            <span class="day">11</span>
+            <span class="day">12</span>
+            <span class="day">13</span>
+            <span class="day">14</span>
+            <span class="day">15</span>
+            <span class="day">16</span>
+            <span class="day">17</span>
+            <span class="day">18</span>
+            <span class="day">19</span>
+            <span class="day">20</span>
+            <span class="day">21</span>
+            <span class="day">22</span>
+            <span class="day">23</span>
+            <span class="day">24</span>
+            <span class="day is-wedding">
+              <span class="day-number">25</span>
+              <span class="day-time">오전 11시</span>
+            </span>
+            <span class="day">26</span>
+            <span class="day">27</span>
+            <span class="day">28</span>
+            <span class="day">29</span>
+            <span class="day">30</span>
+          </div>
+          <div class="countdown" aria-live="polite">
+            <p id="dday-label" class="dday-label">D-DAY</p>
+            <p id="dday-timer" class="dday-timer">남은 시간 계산 중...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section">
+        <h2>photo</h2>
+        <div class="gallery-preview-wrap">
+          <img
+            id="gallery-preview"
+            class="gallery-preview"
+            src="https://picsum.photos/seed/wed1/900/1200"
+            alt="웨딩 사진 1"
+          />
+        </div>
+        <div class="gallery-thumbs">
+          <button type="button" class="gallery-thumb is-active" data-index="0" aria-label="웨딩 사진 1 보기">
+            <img src="https://picsum.photos/seed/wed1/300/300" alt="웨딩 사진 1" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="1" aria-label="웨딩 사진 2 보기">
+            <img src="https://picsum.photos/seed/wed2/300/300" alt="웨딩 사진 2" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="2" aria-label="웨딩 사진 3 보기">
+            <img src="https://picsum.photos/seed/wed3/300/300" alt="웨딩 사진 3" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="3" aria-label="웨딩 사진 4 보기">
+            <img src="https://picsum.photos/seed/wed4/300/300" alt="웨딩 사진 4" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="4" aria-label="웨딩 사진 5 보기">
+            <img src="https://picsum.photos/seed/wed5/300/300" alt="웨딩 사진 5" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="5" aria-label="웨딩 사진 6 보기">
+            <img src="https://picsum.photos/seed/wed6/300/300" alt="웨딩 사진 6" />
+          </button>
+        </div>
+      </section>
+
+      <section class="location section">
+        <h2>location</h2>
+        <p class="venue-name">우리은행 본점 4층 비전홀</p>
+        <p class="venue-address">서울특별시 중구 소공로 51 (회현동2가 203)</p>
+        <div id="map" aria-label="카카오맵 위치"></div>
+        <a
+          class="map-link"
+          href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%86%8C%EA%B3%B5%EB%A1%9C%2051"
+          target="_blank"
+          rel="noopener noreferrer"
+          >카카오맵에서 길찾기</a
+        >
+      </section>
+
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="닫기">×</button>
+        <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="이전 사진">‹</button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+        <button type="button" class="lightbox-nav next" id="lightbox-next" aria-label="다음 사진">›</button>
+      </div>
+
+      <section class="account section">
+        <h2>마음 전하실 곳</h2>
+        <div class="account-list">
+          <details class="account-card">
+            <summary class="account-summary">신랑측 계좌번호</summary>
+            <div class="account-body">
+              <p class="account-number" data-copy="국민은행 123456-78-901234 오세욱">
+                국민은행 123456-78-901234 오세욱
+              </p>
+              <button type="button" class="copy-btn" data-copy-target="국민은행 123456-78-901234 오세욱">
+                계좌번호 복사
+              </button>
+            </div>
+          </details>
+          <details class="account-card">
+            <summary class="account-summary">신부측 계좌번호</summary>
+            <div class="account-body">
+              <p class="account-number" data-copy="신한은행 110-456-789012 김상화">
+                신한은행 110-456-789012 김상화
+              </p>
+              <button type="button" class="copy-btn" data-copy-target="신한은행 110-456-789012 김상화">
+                계좌번호 복사
+              </button>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_JAVASCRIPT_KEY&autoload=false&libraries=services"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
