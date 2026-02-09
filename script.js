@@ -4,7 +4,7 @@
   mapContainer.innerHTML = `<p style="margin:0;padding:16px;color:#676a63;font-size:0.86rem;line-height:1.6;">${message}</p>`;
 }
 
-const VENUE_NAME = "우리은행 본점 4층 비전홀";
+const VENUE_NAME = "우리은행 본점";
 const VENUE_ADDRESS = "서울특별시 중구 소공로 51";
 const WEDDING_DATE = new Date("2026-04-25T11:00:00+09:00");
 
