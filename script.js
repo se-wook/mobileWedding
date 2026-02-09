@@ -1,4 +1,6 @@
 ﻿function disablePinchZoom() {
+  let lastTouchEnd = 0;
+
   document.addEventListener(
     "touchmove",
     (event) => {
@@ -13,6 +15,18 @@
     "gesturestart",
     (event) => {
       event.preventDefault();
+    },
+    { passive: false }
+  );
+
+  document.addEventListener(
+    "touchend",
+    (event) => {
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
     },
     { passive: false }
   );
@@ -302,4 +316,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
+
 

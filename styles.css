@@ -122,7 +122,7 @@ img {
 }
 
 .cover-info {
-  margin: 0 16px;
+  margin: 0;
   color: var(--subtext);
 }
 
@@ -200,7 +200,7 @@ img {
 .mini-polaroid {
   width: 88px;
   margin: 26px auto 34px;
-  padding: 6px;
+  padding: 6px 6px 14px;
   background: #fff;
   border: 1px solid #ecebe7;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
