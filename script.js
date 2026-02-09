@@ -253,9 +253,28 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const startMap = () => {
+    if (window.kakao && window.kakao.maps) {
+      kakao.maps.load(initKakaoMap);
+      return;
+    }
+    showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
+  };
+
   if (window.kakao && window.kakao.maps) {
-    kakao.maps.load(initKakaoMap);
-  } else {
-    showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키를 확인해주세요.");
+    startMap();
+    return;
   }
+
+  if (sdkScript) {
+    sdkScript.addEventListener("load", startMap, { once: true });
+    sdkScript.addEventListener(
+      "error",
+      () => showMapFallback("카카오 지도 SDK 로드에 실패했습니다. 네트워크 또는 키 설정을 확인해주세요."),
+      { once: true }
+    );
+    return;
+  }
+
+  showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
