@@ -7,6 +7,12 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>모바일 청첩장</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -19,7 +25,7 @@
         <div class="cover-photo-wrap">
           <img
             class="cover-image"
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
+            src="assets/cover/main.jpg"
             alt="신랑 신부 메인 사진"
           />
         </div>
@@ -29,7 +35,7 @@
 
       <section class="greeting section">
         <div class="mini-polaroid">
-          <img src="https://picsum.photos/seed/polaroid1/320/420" alt="세욱 상화 스냅 사진" />
+          <img src="assets/polaroid/mini.jpg" alt="세욱 상화 스냅 사진" />
         </div>
         <p>
           세욱, 상화 결혼합니다.<br /><br />
@@ -41,8 +47,14 @@
           사랑으로 첫걸음을 내딛는 날 함께해 주세요.
         </p>
         <p class="greeting-family">
-          오두섭 · 이미연 의 장남 세욱<br />
+          오두섭 · 이미연 의 장남 세욱
+          <a class="call-link" href="tel:01091515180" aria-label="세욱에게 전화하기"
+            ><i class="fa-solid fa-phone" aria-hidden="true"></i
+          ></a><br />
           김광호 · 김인옥 의 장녀 상화
+          <a class="call-link" href="tel:01099015401" aria-label="상화에게 전화하기"
+            ><i class="fa-solid fa-phone" aria-hidden="true"></i
+          ></a>
         </p>
       </section>
 
@@ -107,31 +119,68 @@
       <section class="gallery section">
         <h2>photo</h2>
         <div class="gallery-preview-wrap">
-          <img
-            id="gallery-preview"
-            class="gallery-preview"
-            src="https://picsum.photos/seed/wed1/900/1200"
-            alt="웨딩 사진 1"
-          />
+          <img id="gallery-preview" class="gallery-preview" src="assets/gallery/01.jpg" alt="웨딩 사진 1" />
         </div>
         <div class="gallery-thumbs">
           <button type="button" class="gallery-thumb is-active" data-index="0" aria-label="웨딩 사진 1 보기">
-            <img src="https://picsum.photos/seed/wed1/300/300" alt="웨딩 사진 1" />
+            <img src="assets/gallery/01.jpg" alt="웨딩 사진 1" />
           </button>
           <button type="button" class="gallery-thumb" data-index="1" aria-label="웨딩 사진 2 보기">
-            <img src="https://picsum.photos/seed/wed2/300/300" alt="웨딩 사진 2" />
+            <img src="assets/gallery/02.jpg" alt="웨딩 사진 2" />
           </button>
           <button type="button" class="gallery-thumb" data-index="2" aria-label="웨딩 사진 3 보기">
-            <img src="https://picsum.photos/seed/wed3/300/300" alt="웨딩 사진 3" />
+            <img src="assets/gallery/03.jpg" alt="웨딩 사진 3" />
           </button>
           <button type="button" class="gallery-thumb" data-index="3" aria-label="웨딩 사진 4 보기">
-            <img src="https://picsum.photos/seed/wed4/300/300" alt="웨딩 사진 4" />
+            <img src="assets/gallery/04.jpg" alt="웨딩 사진 4" />
           </button>
           <button type="button" class="gallery-thumb" data-index="4" aria-label="웨딩 사진 5 보기">
-            <img src="https://picsum.photos/seed/wed5/300/300" alt="웨딩 사진 5" />
+            <img src="assets/gallery/05.jpg" alt="웨딩 사진 5" />
           </button>
           <button type="button" class="gallery-thumb" data-index="5" aria-label="웨딩 사진 6 보기">
-            <img src="https://picsum.photos/seed/wed6/300/300" alt="웨딩 사진 6" />
+            <img src="assets/gallery/06.jpg" alt="웨딩 사진 6" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="6" aria-label="웨딩 사진 7 보기">
+            <img src="assets/gallery/07.jpg" alt="웨딩 사진 7" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="7" aria-label="웨딩 사진 8 보기">
+            <img src="assets/gallery/08.jpg" alt="웨딩 사진 8" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="8" aria-label="웨딩 사진 9 보기">
+            <img src="assets/gallery/09.jpg" alt="웨딩 사진 9" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="9" aria-label="웨딩 사진 10 보기">
+            <img src="assets/gallery/10.jpg" alt="웨딩 사진 10" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="10" aria-label="웨딩 사진 11 보기">
+            <img src="assets/gallery/11.jpg" alt="웨딩 사진 11" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="11" aria-label="웨딩 사진 12 보기">
+            <img src="assets/gallery/12.jpg" alt="웨딩 사진 12" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="12" aria-label="웨딩 사진 13 보기">
+            <img src="assets/gallery/13.jpg" alt="웨딩 사진 13" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="13" aria-label="웨딩 사진 14 보기">
+            <img src="assets/gallery/14.jpg" alt="웨딩 사진 14" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="14" aria-label="웨딩 사진 15 보기">
+            <img src="assets/gallery/15.jpg" alt="웨딩 사진 15" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="15" aria-label="웨딩 사진 16 보기">
+            <img src="assets/gallery/16.jpg" alt="웨딩 사진 16" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="16" aria-label="웨딩 사진 17 보기">
+            <img src="assets/gallery/17.jpg" alt="웨딩 사진 17" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="17" aria-label="웨딩 사진 18 보기">
+            <img src="assets/gallery/18.jpg" alt="웨딩 사진 18" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="18" aria-label="웨딩 사진 19 보기">
+            <img src="assets/gallery/19.jpg" alt="웨딩 사진 19" />
+          </button>
+          <button type="button" class="gallery-thumb" data-index="19" aria-label="웨딩 사진 20 보기">
+            <img src="assets/gallery/20.jpg" alt="웨딩 사진 20" />
           </button>
         </div>
       </section>
@@ -190,6 +239,7 @@
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 

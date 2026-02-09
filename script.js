@@ -68,7 +68,8 @@ function updateCountdown() {
   const diff = WEDDING_DATE.getTime() - now.getTime();
 
   if (diff <= 0) {
-    label.textContent = "D-DAY";
+    label.textContent = "";
+    timer.classList.remove("is-live");
     timer.textContent = "오늘, 저희 결혼식이 시작됩니다.";
     return;
   }
@@ -79,8 +80,26 @@ function updateCountdown() {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  label.textContent = `D-${days}`;
-  timer.textContent = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
+  label.textContent = "";
+  timer.classList.add("is-live");
+  timer.innerHTML = `
+    <span class="dday-unit">
+      <span class="dday-circle">${days}</span>
+      <span class="dday-name">Days</span>
+    </span>
+    <span class="dday-unit">
+      <span class="dday-circle">${hours}</span>
+      <span class="dday-name">Hours</span>
+    </span>
+    <span class="dday-unit">
+      <span class="dday-circle">${minutes}</span>
+      <span class="dday-name">Minutes</span>
+    </span>
+    <span class="dday-unit">
+      <span class="dday-circle">${seconds}</span>
+      <span class="dday-name">Seconds</span>
+    </span>
+  `;
 }
 
 function bindSectionFadeIn() {

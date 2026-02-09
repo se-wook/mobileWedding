@@ -89,10 +89,11 @@ img {
 }
 
 .cover-image {
-  width: calc(100% - 12px);
+  width: 100%;
   margin: 0 auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 0;
 }
 
@@ -121,13 +122,22 @@ img {
 }
 
 .cover-info {
-  margin: 10px 16px 0;
+  margin: 0 16px;
   color: var(--subtext);
 }
 
+.cover-photo-wrap + .cover-info {
+  margin-top: 14px;
+}
+
+.cover-info + .cover-info {
+  margin-top: 4px;
+}
+
 .countdown {
-  margin-top: 16px;
-  padding-top: 0;
+  margin-top: 18px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(47, 48, 44, 0.08);
 }
 
 .dday-label,
@@ -136,15 +146,45 @@ img {
 }
 
 .dday-label {
-  font-size: 0.78rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
+  display: none;
 }
 
 .dday-timer {
   margin-top: 4px;
   font-size: 0.92rem;
   color: var(--subtext);
+}
+
+.dday-timer.is-live {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dday-unit {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.dday-circle {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  color: #4a4a4a;
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+}
+
+.dday-name {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: #777;
 }
 
 .greeting p,
@@ -178,8 +218,18 @@ img {
   padding-top: 14px;
   border-top: 1px solid var(--line);
   color: #7a7d76 !important;
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   line-height: 1.8;
+}
+
+.call-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 0.88em;
+  color: var(--subtext);
+  line-height: 1;
+  vertical-align: 0.06em;
 }
 
 .calendar-wrap {
@@ -481,7 +531,7 @@ img {
   }
 
   .cover-image {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
   }
 
   .gallery-thumbs {
