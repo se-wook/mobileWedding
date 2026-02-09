@@ -147,16 +147,6 @@ function bindGalleryLightbox() {
     thumbButtons.forEach((button) => button.classList.remove("is-active"));
     if (thumbButtons[index]) thumbButtons[index].classList.add("is-active");
 
-    if (animate) {
-      previewImage.classList.add("is-changing");
-      setTimeout(() => {
-        previewImage.src = photo.fullSrc;
-        previewImage.alt = photo.alt;
-        previewImage.classList.remove("is-changing");
-      }, 120);
-      return;
-    }
-
     previewImage.src = photo.fullSrc;
     previewImage.alt = photo.alt;
   }
