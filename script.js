@@ -1,10 +1,19 @@
-﻿const VENUE_NAME = "우리은행 본점 4층 비전홀";
+﻿function showMapFallback(message) {
+  const mapContainer = document.getElementById("map");
+  if (!mapContainer) return;
+  mapContainer.innerHTML = `<p style="margin:0;padding:16px;color:#676a63;font-size:0.86rem;line-height:1.6;">${message}</p>`;
+}
+
+const VENUE_NAME = "우리은행 본점 4층 비전홀";
 const VENUE_ADDRESS = "서울특별시 중구 소공로 51";
 const WEDDING_DATE = new Date("2026-04-25T11:00:00+09:00");
 
 function initKakaoMap() {
   const mapContainer = document.getElementById("map");
-  if (!mapContainer || !window.kakao || !window.kakao.maps) return;
+  if (!mapContainer || !window.kakao || !window.kakao.maps) {
+    showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키를 확인해주세요.");
+    return;
+  }
 
   const defaultCenter = new kakao.maps.LatLng(37.5665, 126.978);
   const map = new kakao.maps.Map(mapContainer, {
@@ -14,7 +23,10 @@ function initKakaoMap() {
 
   const geocoder = new kakao.maps.services.Geocoder();
   geocoder.addressSearch(VENUE_ADDRESS, (result, status) => {
-    if (status !== kakao.maps.services.Status.OK || !result[0]) return;
+    if (status !== kakao.maps.services.Status.OK || !result[0]) {
+      showMapFallback("주소를 찾지 못했습니다. 주소 또는 지도 키 설정을 확인해주세요.");
+      return;
+    }
 
     const lat = Number(result[0].y);
     const lng = Number(result[0].x);
@@ -93,15 +105,17 @@ function bindGalleryLightbox() {
   let currentIndex = 0;
   let startX = 0;
   let endX = 0;
-  const photos = thumbButtons.map((button) => {
-    const thumbImage = button.querySelector("img");
-    if (!thumbImage) return null;
-    return {
-      thumbSrc: thumbImage.src,
-      fullSrc: thumbImage.src.replace("/300/300", "/900/1200"),
-      alt: thumbImage.alt
-    };
-  }).filter(Boolean);
+  const photos = thumbButtons
+    .map((button) => {
+      const thumbImage = button.querySelector("img");
+      if (!thumbImage) return null;
+      return {
+        thumbSrc: thumbImage.src,
+        fullSrc: thumbImage.src.replace("/300/300", "/900/1200"),
+        alt: thumbImage.alt
+      };
+    })
+    .filter(Boolean);
 
   if (!photos.length) return;
 
@@ -231,7 +245,17 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  const sdkScript = document.getElementById("kakao-map-sdk");
+  const hasPlaceholderKey = sdkScript && sdkScript.src.includes("YOUR_KAKAO_JAVASCRIPT_KEY");
+
+  if (hasPlaceholderKey) {
+    showMapFallback("카카오 지도 미리보기를 위해 JavaScript 키를 입력해주세요.");
+    return;
+  }
+
   if (window.kakao && window.kakao.maps) {
     kakao.maps.load(initKakaoMap);
+  } else {
+    showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키를 확인해주세요.");
   }
 });
