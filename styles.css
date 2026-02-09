@@ -89,7 +89,8 @@ img {
 }
 
 .cover-image {
-  width: 100%;
+  width: calc(100% - 12px);
+  margin: 0 auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 0;
@@ -116,21 +117,7 @@ img {
 }
 
 .cover-photo-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  column-gap: 12px;
   padding: 0;
-}
-
-.cover-side-name {
-  margin: 0;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
-  color: var(--subtext);
-  text-shadow: none;
 }
 
 .cover-info {
@@ -369,6 +356,8 @@ img {
   width: auto;
   height: auto;
   object-fit: contain;
+  touch-action: none;
+  user-select: none;
 }
 
 .lightbox-close {
@@ -503,5 +492,6 @@ img {
     height: 300px;
   }
 }
+
 
 

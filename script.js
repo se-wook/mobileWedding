@@ -1,4 +1,23 @@
-﻿function showMapFallback(message) {
+﻿function disablePinchZoom() {
+  document.addEventListener(
+    "touchmove",
+    (event) => {
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
+
+  document.addEventListener(
+    "gesturestart",
+    (event) => {
+      event.preventDefault();
+    },
+    { passive: false }
+  );
+}
+function showMapFallback(message) {
   const mapContainer = document.getElementById("map");
   if (!mapContainer) return;
   mapContainer.innerHTML = `<p style="margin:0;padding:16px;color:#676a63;font-size:0.86rem;line-height:1.6;">${message}</p>`;
@@ -242,6 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindCopyButtons();
   bindSectionFadeIn();
   bindGalleryLightbox();
+  disablePinchZoom();
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
@@ -278,3 +298,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
+
