@@ -36,7 +36,7 @@ function initKakaoMap() {
     marker.setMap(map);
 
     const info = new kakao.maps.InfoWindow({
-      content: `<div style="padding:6px 10px;font-size:12px;">${VENUE_NAME}</div>`
+      content: `<div style="display:inline-block;padding:4px 7px;font-size:12px;line-height:1.2;white-space:nowrap;">${VENUE_NAME}</div>`
     });
     info.open(map, marker);
 
