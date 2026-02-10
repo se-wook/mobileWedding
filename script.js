@@ -31,6 +31,35 @@
     { passive: false }
   );
 }
+function initSakura() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const layer = document.getElementById("sakura-layer");
+  if (!layer) return;
+
+  const petalCount = Math.min(16, Math.max(10, Math.floor(window.innerWidth / 48)));
+  layer.innerHTML = "";
+
+  for (let i = 0; i < petalCount; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = "sakura";
+
+    const size = 7 + Math.random() * 9;
+    const left = Math.random() * 100;
+    const duration = 9 + Math.random() * 10;
+    const delay = Math.random() * -18;
+    const drift = (Math.random() * 140 - 70).toFixed(1);
+
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size * 0.78}px`;
+    petal.style.left = `${left}%`;
+    petal.style.animationDuration = `${duration}s`;
+    petal.style.animationDelay = `${delay}s`;
+    petal.style.setProperty("--sakura-drift", `${drift}px`);
+
+    layer.appendChild(petal);
+  }
+}
 function showMapFallback(message) {
   const mapContainer = document.getElementById("map");
   if (!mapContainer) return;
@@ -279,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindCopyButtons();
   bindSectionFadeIn();
   bindGalleryLightbox();
+  initSakura();
   disablePinchZoom();
   updateCountdown();
   setInterval(updateCountdown, 1000);
@@ -316,5 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
+
+
 
 

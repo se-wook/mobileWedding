@@ -30,6 +30,40 @@ body {
   line-height: 1.75;
 }
 
+.sakura-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sakura {
+  position: absolute;
+  top: -12vh;
+  border-radius: 70% 30% 70% 30%;
+  background: radial-gradient(circle at 30% 25%, #fff 6%, #ffdce7 40%, #f5b7ca 100%);
+  opacity: 0.68;
+  animation-name: sakura-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(var(--sakura-drift, 40px), 112vh, 0) rotate(380deg);
+    opacity: 0.06;
+  }
+}
+
 img {
   display: block;
   width: 100%;
@@ -41,6 +75,7 @@ img {
   margin: 0 auto;
   padding: 22px 22px 56px;
   position: relative;
+  z-index: 2;
 }
 
 .invitation::before {
@@ -510,6 +545,10 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .sakura-layer {
+    display: none;
+  }
+
   .section {
     opacity: 1;
     transform: none;
