@@ -486,9 +486,8 @@ img {
 }
 
 .account-card {
-  border-top: 1px solid var(--line);
-  padding-top: 10px;
-  background: transparent;
+  border: 1px solid var(--line);
+  background: #fff;
 }
 
 .account-summary {
@@ -496,7 +495,8 @@ img {
   list-style: none;
   font-size: 0.94rem;
   color: var(--text);
-  padding: 6px 0;
+  padding: 12px 12px;
+  background: #fcfcfc;
 }
 
 .account-summary::-webkit-details-marker {
@@ -514,25 +514,75 @@ img {
 }
 
 .account-body {
-  padding-top: 6px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.account-card[open] {
+  border-color: #cfd4cb;
+}
+
+.account-card[open] .account-summary {
+  background: #f7faf5;
 }
 
 .account-number {
-  margin: 6px 0 12px;
+  margin: 0;
   word-break: keep-all;
 }
 
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-row .account-number {
+  flex: 1;
+}
+
+.account-extra-list {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(47, 48, 44, 0.08);
+  background: linear-gradient(to bottom, rgba(247, 250, 245, 0.45), rgba(247, 250, 245, 0));
+}
+
+.account-extra-item {
+  padding-top: 10px;
+}
+
+.account-extra-item + .account-extra-item {
+  margin-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.account-meta {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  color: var(--subtext);
+}
+
+.account-phone {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #d9ddd3;
+}
+
 .copy-btn {
-  width: 100%;
-  height: 40px;
+  width: auto;
+  min-width: 52px;
+  height: 32px;
+  padding: 0 10px;
   border: 1px solid #cad3c3;
   border-radius: 0;
   background: transparent;
   color: var(--text);
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .copy-btn:hover {
@@ -542,6 +592,20 @@ img {
 
 .copy-btn:active {
   transform: translateY(1px);
+}
+
+.footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(47, 48, 44, 0.08);
+  text-align: center;
+  color: var(--subtext);
+}
+
+.footer-signature {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 @media (prefers-reduced-motion: reduce) {
