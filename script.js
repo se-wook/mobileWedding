@@ -283,10 +283,11 @@ function bindGalleryLightbox() {
 async function copyAccount(text, button) {
   try {
     await navigator.clipboard.writeText(text);
-    const original = button.textContent;
-    button.textContent = "복사 완료";
+    const original = button.dataset.defaultHtml || button.innerHTML;
+    button.dataset.defaultHtml = original;
+    button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i><span>완료</span>';
     setTimeout(() => {
-      button.textContent = original;
+      button.innerHTML = original;
     }, 1200);
   } catch (err) {
     alert("복사에 실패했습니다. 길게 눌러 직접 복사해주세요.");
@@ -304,8 +305,18 @@ function bindCopyButtons() {
   });
 }
 
+function bindShareLinkButton() {
+  const button = document.getElementById("share-link-btn");
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    copyAccount(window.location.href, button);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   bindCopyButtons();
+  bindShareLinkButton();
   bindSectionFadeIn();
   bindGalleryLightbox();
   initSakura();

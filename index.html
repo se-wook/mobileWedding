@@ -6,6 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="세욱 ♥ 상화 모바일 청첩장" />
     <meta property="og:title" content="세욱 ♥ 상화 결혼합니다." />
@@ -15,12 +21,6 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="1200" />
     <title>모바일 청첩장</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -222,32 +222,12 @@
             <summary class="account-summary">신랑측 계좌번호</summary>
             <div class="account-body">
               <div class="account-row">
-                <p class="account-number" data-copy="12345678901234">
-                  국민은행 123456-78-901234 오세욱
+                <p class="account-number" data-copy="1002360829811">
+                  우리은행 1002-360-829811 오세욱
                 </p>
-                <button type="button" class="copy-btn" data-copy-target="12345678901234">
-                  복사
+                <button type="button" class="copy-btn" data-copy-target="1002360829811">
+                  <i class="fa-regular fa-copy" aria-hidden="true"></i><span>복사</span>
                 </button>
-              </div>
-              <div class="account-extra-list">
-                <div class="account-extra-item">
-                  <p class="account-meta">오두섭</p>
-                  <div class="account-row">
-                    <p class="account-number" data-copy="98765432100001">
-                      국민은행 987654-32-100001
-                    </p>
-                    <button type="button" class="copy-btn" data-copy-target="98765432100001">복사</button>
-                  </div>
-                </div>
-                <div class="account-extra-item">
-                  <p class="account-meta">이미연</p>
-                  <div class="account-row">
-                    <p class="account-number" data-copy="110222333444">
-                      신한은행 110-222-333444
-                    </p>
-                    <button type="button" class="copy-btn" data-copy-target="110222333444">복사</button>
-                  </div>
-                </div>
               </div>
             </div>
           </details>
@@ -255,30 +235,44 @@
             <summary class="account-summary">신부측 계좌번호</summary>
             <div class="account-body">
               <div class="account-row">
-                <p class="account-number" data-copy="110456789012">
-                  신한은행 110-456-789012 김상화
+                <p class="account-number" data-copy="45591035643107">
+                  하나은행 455-910356-43107 김상화
                 </p>
-                <button type="button" class="copy-btn" data-copy-target="110456789012">
-                  복사
+                <button type="button" class="copy-btn" data-copy-target="45591035643107">
+                  <i class="fa-regular fa-copy" aria-hidden="true"></i><span>복사</span>
                 </button>
               </div>
               <div class="account-extra-list">
                 <div class="account-extra-item">
-                  <p class="account-meta">김광호</p>
+                  <div class="account-meta-row">
+                    <p class="account-meta">김광호</p>
+                    <a class="account-call-btn" href="tel:01036520090" aria-label="김광호에게 전화하기"
+                      ><i class="fa-solid fa-phone" aria-hidden="true"></i><span>전화</span></a
+                    >
+                  </div>
                   <div class="account-row">
-                    <p class="account-number" data-copy="3011234567891">
-                      농협 301-1234-5678-91
+                    <p class="account-number" data-copy="3021023256471">
+                      농협 302-1023-256471
                     </p>
-                    <button type="button" class="copy-btn" data-copy-target="3011234567891">복사</button>
+                    <button type="button" class="copy-btn" data-copy-target="3021023256471">
+                      <i class="fa-regular fa-copy" aria-hidden="true"></i><span>복사</span>
+                    </button>
                   </div>
                 </div>
                 <div class="account-extra-item">
-                  <p class="account-meta">김인옥</p>
+                  <div class="account-meta-row">
+                    <p class="account-meta">김인옥</p>
+                    <a class="account-call-btn" href="tel:01025835401" aria-label="김인옥에게 전화하기"
+                      ><i class="fa-solid fa-phone" aria-hidden="true"></i><span>전화</span></a
+                    >
+                  </div>
                   <div class="account-row">
-                    <p class="account-number" data-copy="1002345678901">
-                      우리은행 1002-345-678901
+                    <p class="account-number" data-copy="3021023231091">
+                      농협 302-1023-231091
                     </p>
-                    <button type="button" class="copy-btn" data-copy-target="1002345678901">복사</button>
+                    <button type="button" class="copy-btn" data-copy-target="3021023231091">
+                      <i class="fa-regular fa-copy" aria-hidden="true"></i><span>복사</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -289,6 +283,9 @@
 
       <footer class="footer">
         <p class="footer-signature">SEWOOK &amp; SANGHWA · 2026.04.25</p>
+        <button type="button" class="share-link-btn" id="share-link-btn">
+          <i class="fa-solid fa-link" aria-hidden="true"></i><span>링크 복사하기</span>
+        </button>
       </footer>
 
     </main>

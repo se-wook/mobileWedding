@@ -541,6 +541,30 @@ img {
   flex: 1;
 }
 
+.account-call-btn {
+  min-width: 52px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #cad3c3;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.account-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
 .account-extra-list {
   margin-top: 10px;
   padding-top: 8px;
@@ -559,7 +583,7 @@ img {
 
 .account-meta {
   margin: 0 0 6px;
-  font-size: 0.82rem;
+  font-size: 0.93rem;
   color: var(--subtext);
 }
 
@@ -583,6 +607,10 @@ img {
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .copy-btn:hover {
@@ -606,6 +634,26 @@ img {
   margin: 0;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
+}
+
+.share-link-btn {
+  margin-top: 10px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #cad3c3;
+  background: transparent;
+  color: var(--subtext);
+  font-family: inherit;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.share-link-btn:hover {
+  background: #f7faf5;
 }
 
 @media (prefers-reduced-motion: reduce) {
