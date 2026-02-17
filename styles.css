@@ -28,6 +28,7 @@ body {
   color: var(--text);
   font-family: "GangwonEdu", serif;
   line-height: 1.75;
+  touch-action: pan-x pan-y;
 }
 
 .sakura-layer {

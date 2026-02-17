@@ -1,20 +1,37 @@
 ﻿function disablePinchZoom() {
   let lastTouchEnd = 0;
+  let lastTapX = 0;
+  let lastTapY = 0;
+
+  const preventIfMultiTouch = (event) => {
+    if (event.touches && event.touches.length > 1 && event.cancelable) {
+      event.preventDefault();
+    }
+  };
+
+  document.addEventListener("touchstart", preventIfMultiTouch, { passive: false });
+  document.addEventListener("touchmove", preventIfMultiTouch, { passive: false });
 
   document.addEventListener(
-    "touchmove",
+    "gesturestart",
     (event) => {
-      if (event.touches.length > 1) {
-        event.preventDefault();
-      }
+      if (event.cancelable) event.preventDefault();
     },
     { passive: false }
   );
 
   document.addEventListener(
-    "gesturestart",
+    "gesturechange",
     (event) => {
-      event.preventDefault();
+      if (event.cancelable) event.preventDefault();
+    },
+    { passive: false }
+  );
+
+  document.addEventListener(
+    "gestureend",
+    (event) => {
+      if (event.cancelable) event.preventDefault();
     },
     { passive: false }
   );
@@ -23,10 +40,34 @@
     "touchend",
     (event) => {
       const now = Date.now();
-      if (now - lastTouchEnd <= 300) {
+      const touch = event.changedTouches && event.changedTouches[0];
+      const x = touch ? touch.clientX : 0;
+      const y = touch ? touch.clientY : 0;
+      const moved = Math.abs(x - lastTapX) > 24 || Math.abs(y - lastTapY) > 24;
+
+      if (now - lastTouchEnd <= 300 && !moved && event.cancelable) {
         event.preventDefault();
       }
+
       lastTouchEnd = now;
+      lastTapX = x;
+      lastTapY = y;
+    },
+    { passive: false }
+  );
+
+  document.addEventListener(
+    "dblclick",
+    (event) => {
+      if (event.cancelable) event.preventDefault();
+    },
+    { passive: false }
+  );
+
+  window.addEventListener(
+    "wheel",
+    (event) => {
+      if (event.ctrlKey && event.cancelable) event.preventDefault();
     },
     { passive: false }
   );
@@ -357,6 +398,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
+
+
+
+
 
 
 
