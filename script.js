@@ -2,6 +2,7 @@
   let lastTouchEnd = 0;
   let lastTapX = 0;
   let lastTapY = 0;
+  const listenerOptions = { passive: false, capture: true };
 
   const preventIfMultiTouch = (event) => {
     if (event.touches && event.touches.length > 1 && event.cancelable) {
@@ -9,15 +10,17 @@
     }
   };
 
-  document.addEventListener("touchstart", preventIfMultiTouch, { passive: false });
-  document.addEventListener("touchmove", preventIfMultiTouch, { passive: false });
+  document.addEventListener("touchstart", preventIfMultiTouch, listenerOptions);
+  document.addEventListener("touchmove", preventIfMultiTouch, listenerOptions);
+  window.addEventListener("touchstart", preventIfMultiTouch, listenerOptions);
+  window.addEventListener("touchmove", preventIfMultiTouch, listenerOptions);
 
   document.addEventListener(
     "gesturestart",
     (event) => {
       if (event.cancelable) event.preventDefault();
     },
-    { passive: false }
+    listenerOptions
   );
 
   document.addEventListener(
@@ -25,7 +28,7 @@
     (event) => {
       if (event.cancelable) event.preventDefault();
     },
-    { passive: false }
+    listenerOptions
   );
 
   document.addEventListener(
@@ -33,7 +36,7 @@
     (event) => {
       if (event.cancelable) event.preventDefault();
     },
-    { passive: false }
+    listenerOptions
   );
 
   document.addEventListener(
@@ -53,7 +56,7 @@
       lastTapX = x;
       lastTapY = y;
     },
-    { passive: false }
+    listenerOptions
   );
 
   document.addEventListener(
@@ -61,7 +64,7 @@
     (event) => {
       if (event.cancelable) event.preventDefault();
     },
-    { passive: false }
+    listenerOptions
   );
 
   window.addEventListener(
@@ -69,7 +72,7 @@
     (event) => {
       if (event.ctrlKey && event.cancelable) event.preventDefault();
     },
-    { passive: false }
+    listenerOptions
   );
 }
 function initSakura() {
@@ -398,6 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showMapFallback("지도를 불러오지 못했습니다. 카카오 지도 키 또는 도메인 설정을 확인해주세요.");
 });
+
 
 
 

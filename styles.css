@@ -443,7 +443,7 @@ img {
 
 .transit-info {
   margin-top: 12px;
-  padding: 10px 12px;
+  padding: 18px 12px 10px;
   border-top: 1px solid rgba(47, 48, 44, 0.08);
 }
 
@@ -452,6 +452,10 @@ img {
   grid-template-columns: 28px minmax(0, 1fr);
   align-items: start !important;
   column-gap: 12px;
+}
+
+.transit-info > .transit-item:first-child {
+  margin-top: 4px;
 }
 
 .shuttle-item {
