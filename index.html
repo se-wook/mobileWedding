@@ -200,13 +200,77 @@
         <p class="venue-name">우리은행 본점 4층 비전홀</p>
         <p class="venue-address">서울특별시 중구 소공로 51 (회현동2가 203)</p>
         <div id="map" aria-label="카카오맵 위치"></div>
-        <a
-          class="map-link"
-          href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%86%8C%EA%B3%B5%EB%A1%9C%2051"
-          target="_blank"
-          rel="noopener noreferrer"
-          >카카오맵에서 길찾기</a
-        >
+        <div class="map-app-links" role="group" aria-label="지도 앱 길찾기">
+          <a
+            class="map-app-link"
+            href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%86%8C%EA%B3%B5%EB%A1%9C%2051"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="map-app-logo" src="assets/logos/kakao.ico?v=2" alt="" aria-hidden="true" />
+            <span>카카오맵</span>
+          </a>
+          <a
+            class="map-app-link"
+            href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%86%8C%EA%B3%B5%EB%A1%9C%2051"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="map-app-logo" src="assets/logos/naver.ico?v=2" alt="" aria-hidden="true" />
+            <span>네이버지도</span>
+          </a>
+          <a
+            class="map-app-link"
+            href="https://apis.openapi.sk.com/tmap/app/routes?name=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EC%86%8C%EA%B3%B5%EB%A1%9C%2051"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="map-app-logo" src="assets/logos/tmap.ico?v=2" alt="" aria-hidden="true" />
+            <span>티맵</span>
+          </a>
+        </div>
+        <div class="transit-info">
+          <div class="transit-item">
+            <div class="transit-icon">
+              <i class="fa-solid fa-bus" aria-hidden="true"></i>
+            </div>
+            <div class="transit-text">
+              <p class="transit-kind">전세버스 (전주 출발)</p>
+              <p>전북도청 남문에서 4월 25일 오전 07시 출발</p>
+              <p>차량번호 : 전북 70바 2305</p>
+              <p>(전북도청 남문주차장 무료 이용)</p>
+            </div>
+          </div>
+          <div class="transit-item shuttle-item">
+            <div class="transit-icon">
+              <i class="fa-solid fa-train-subway" aria-hidden="true"></i>
+            </div>
+            <div class="transit-text">
+              <p class="transit-kind">지하철</p>
+              <p>4호선 회현역 1번출구 (명동 방향 도보 5분)</p>
+              <p>4호선 명동역 4번출구 (회현 방향 도보 10분)</p>
+            </div>
+          </div>
+          <div class="transit-item shuttle-item">
+            <div class="transit-icon">
+              <i class="fa-solid fa-bus-simple" aria-hidden="true"></i>
+            </div>
+            <div class="transit-text">
+              <p class="transit-kind">버스</p>
+              <p>[순환] 03</p>
+              <p>[간선] 143, 401, 406, 503, 505, 104, 504, 502, 103, 149</p>
+            </div>
+          </div>
+          <div class="transit-item shuttle-item">
+            <div class="transit-icon">
+              <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+            </div>
+            <div class="transit-text">
+              <p class="transit-kind">자가용</p>
+              <p>우리은행 본점 지하주차장 이용, 무료주차</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -295,9 +359,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
