@@ -400,16 +400,57 @@ img {
   border-radius: 4px;
 }
 
+/* Force consistent app-link layout even with global img rules or cached quirks */
+.location .map-app-links {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.location .map-app-links .map-app-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  color: #3f3f3f !important;
+  text-decoration: none !important;
+  line-height: 1.2;
+}
+
+.location .map-app-links .map-app-link .map-app-logo {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  min-width: 18px;
+  min-height: 18px;
+  flex: 0 0 18px;
+  display: block !important;
+  object-fit: contain;
+}
+
+.location .map-app-links .map-app-link span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.location .map-app-links img {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+}
+
 .transit-info {
   margin-top: 12px;
   padding: 10px 12px;
   border-top: 1px solid rgba(47, 48, 44, 0.08);
 }
 
-.transit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+.location .transit-item {
+  display: grid !important;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start !important;
+  column-gap: 12px;
 }
 
 .shuttle-item {
@@ -418,20 +459,24 @@ img {
   border-top: 1px solid rgba(47, 48, 44, 0.08);
 }
 
-.transit-icon {
+.location .transit-icon {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   border: 1px solid rgba(47, 48, 44, 0.16);
-  display: grid;
+  display: grid !important;
   place-items: center;
   color: var(--subtext);
   background: rgba(255, 255, 255, 0.78);
-  margin-top: 0;
+  margin-top: 1px;
 }
 
-.transit-icon i {
+.location .transit-icon i {
   font-size: 0.78rem;
+}
+
+.location .transit-text {
+  min-width: 0;
 }
 
 .transit-text p {
@@ -443,7 +488,7 @@ img {
   margin-bottom: 4px !important;
   color: var(--text) !important;
   font-size: 0.96rem;
-  line-height: 28px;
+  line-height: 1.35;
 }
 
 .transit-text p + p {
