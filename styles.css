@@ -136,20 +136,20 @@ img {
 .cover-text {
   padding: 0 4px 14px;
   color: var(--text);
-  text-align: left;
+  text-align: center;
   text-shadow: none;
 }
 
 .cover-kicker {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
 
 .cover-date {
   margin: 6px 0 4px;
-  font-size: 1.05rem;
+  font-size: 19px;
   font-weight: 500;
 }
 
@@ -160,6 +160,7 @@ img {
 .cover-info {
   margin: 0;
   color: var(--subtext);
+  text-align: center;
 }
 
 .cover-photo-wrap + .cover-info {
