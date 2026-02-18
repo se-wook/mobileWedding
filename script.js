@@ -328,8 +328,11 @@ async function copyAccount(text, button) {
   try {
     await navigator.clipboard.writeText(text);
     const original = button.dataset.defaultHtml || button.innerHTML;
+    const doneHtml = button.classList.contains("address-copy-btn")
+      ? '<i class="fa-solid fa-check" aria-hidden="true"></i>'
+      : '<i class="fa-solid fa-check" aria-hidden="true"></i><span>완료</span>';
     button.dataset.defaultHtml = original;
-    button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i><span>완료</span>';
+    button.innerHTML = doneHtml;
     setTimeout(() => {
       button.innerHTML = original;
     }, 1200);
@@ -339,7 +342,7 @@ async function copyAccount(text, button) {
 }
 
 function bindCopyButtons() {
-  const buttons = document.querySelectorAll(".copy-btn");
+  const buttons = document.querySelectorAll(".copy-btn, .address-copy-btn");
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const text = button.dataset.copyTarget;
