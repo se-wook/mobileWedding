@@ -30,6 +30,8 @@ body {
   font-family: "GangwonEdu", serif;
   line-height: 1.75;
   touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 .sakura-layer {
@@ -143,14 +145,14 @@ img {
 
 .cover-kicker {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
 
 .cover-date {
   margin: 6px 0 4px;
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 500;
 }
 
@@ -264,7 +266,7 @@ img {
   display: inline-block;
   text-decoration: none;
   margin-left: 5px;
-  font-size: 0.88em;
+  font-size: 0.88rem;
   color: var(--subtext);
   line-height: 1;
   vertical-align: 0.06em;
@@ -518,6 +520,8 @@ img {
 .transit-text p {
   margin: 0;
   color: var(--subtext);
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .transit-kind {
@@ -529,6 +533,10 @@ img {
 
 .transit-text p + p {
   margin-top: 3px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .gallery-preview-wrap {
